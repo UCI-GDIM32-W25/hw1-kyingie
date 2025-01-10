@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -15,17 +16,7 @@ public class Player : MonoBehaviour
     {
         _numSeedsLeft = _numSeeds;
         _numSeedsPlanted = 0;
-
-        // Press space to plant seed
-        if (Input.GetKey(KeyCode.Space))
-        {
-            for (int i = 0; i < _numSeeds; i++)
-            {
-                PlantSeed();
-                _numSeedsLeft = _numSeeds -= 1;
-                _numSeedsPlanted += 1;
-            }
-        }
+        _playerTransform.position = Vector3.zero;
     }
 
     private void Update()
@@ -53,10 +44,22 @@ public class Player : MonoBehaviour
       
         // Update Plant Count UI
         _plantCountUI.UpdateSeeds(_numSeedsLeft, _numSeedsPlanted);
+
+        // Press space to plant seed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (_numSeedsPlanted < 5)
+            {
+                PlantSeed();
+                _numSeedsLeft -= 1;
+                _numSeedsPlanted += 1;
+            }
+        }
     }
 
     public void PlantSeed ()
     {
         GameObject plantPrefab = Instantiate(_plantPrefab) as GameObject;
+        plantPrefab.transform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, _playerTransform.position.z);
     }
 }

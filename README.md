@@ -17,10 +17,9 @@ Only plants 5 prefabs maximum → Num Seeds = 5
 Change text UI based on remaining and planted plant game objects
 
 ## Devlog
-Prompt: Include the HW1 break-down exercise you wrote during the Week 1 - Lecture 2 (Jan 9) in-class activity (above). If you did not attend and perform this activity, review the lecture slides and write your own plan for how you believe HW1 should be built. If your initially proposed plan turned out significantly different than the activity answers given by Prof Reid, you may want to note what was different. Then, write about how the plan you wrote in the break-down connects to the code you wrote. Cite specific class names and method names in the code and GameObjects in your Unity Scene.
+To begin with this assignment, I added player movement which turned out well as I reviewed previous game projects on how I added movement using the WASD key inputs. I was able to instantiate the plant prefab, but had a hard time figuring out how to make the player plant the prefab once and not all five at the same time. To solve this, I researched for alternative methods of using key inputs, and found that it would be better to use 'GetKeyDown' whereas the initial option of 'GetKey' that kept updating the plant prefab to spawn all five at the same time. By changing it to 'GetKeyDown', the game was able to detect each interaction of the space key in update. Initially in my plan, I wanted to work on Plant Count UI last, but it made sense to work on it first to make sure the plants were being instantiated into the game. I struggled a bit with the PlantSeed function because previously the plants spawned following the player's movement and not the player's position, but I fixed the positioning of the prefabs as I mistakenly was changing the _plantPrefab's position when I should've been changing the new game object plantPrefab that was being instantiated. Overall, this was a good lesson and review of last quarter's coding so I had fun!
 
 
-Write your Devlog here!
 
 
 ## Open-Source Assets
