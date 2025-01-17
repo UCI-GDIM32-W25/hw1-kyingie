@@ -19,9 +19,13 @@ Change text UI based on remaining and planted plant game objects
 ## Devlog
 To begin with this assignment, I added player movement which turned out well as I reviewed previous game projects on how I added movement using the WASD key inputs. I was able to instantiate the plant prefab, but had a hard time figuring out how to make the player plant the prefab once and not all five at the same time. To solve this, I researched for alternative methods of using key inputs, and found that it would be better to use 'GetKeyDown' whereas the initial option of 'GetKey' that kept updating the plant prefab to spawn all five at the same time. By changing it to 'GetKeyDown', the game was able to detect each interaction of the space key in update. Initially in my plan, I wanted to work on Plant Count UI last, but it made sense to work on it first to make sure the plants were being instantiated into the game. I struggled a bit with the PlantSeed function because previously the plants spawned following the player's movement and not the player's position, but I fixed the positioning of the prefabs as I mistakenly was changing the _plantPrefab's position when I should've been changing the new game object plantPrefab that was being instantiated. Overall, this was a good lesson and review of last quarter's coding so I had fun!
 
-
-
-
 ## Open-Source Assets
 If you added any other outside assets, list them here!
 - [Sprout Lands sprite asset pack](https://cupnooble.itch.io/sprout-lands-asset-pack) - character and item sprites
+
+## Prof comments
+I can give you full credit for this Devlog because you did manage to connect the plans that you wrote in your activity to the code that you wrote, but in the future, make sure that your answer to the Devlog prompt is extremely clear. Our Devlogs are not exactly like they used to be last quarter where you're focused on writing about a problem solved- we have specifc prompts this time that you need to address explicitly. 
+
+I'm glad to hear you discovered the difference between GetKey and GetKeyDown and the difference between changing settings on a Prefab vs. an instantiated object as you were coding :D
+
+It may aide you in the future to write your break-downs as bullet point lists instead of full sentences- it makes them a little easier to read and use as a reference as you're coding. That being said, you can write your break-downs however you want to; I'm not grading how you structure them. See the [README formatting guide here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) if you do choose to do a bullet-point format for your next Devlog.
